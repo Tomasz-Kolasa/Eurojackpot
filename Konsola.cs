@@ -7,7 +7,12 @@ namespace Eurojackpot
     {
         static public void Wyczysc()
         {
+            var textPowitalny = "*** Eurojackpot ***";
+
             Console.Clear();
+            Console.Write(new string(' ', (Console.WindowWidth - textPowitalny.Length) / 2));
+            Console.WriteLine(textPowitalny);
+            Console.WriteLine();
         }
 
         static public void WyswietLiczby(List<byte> liczby, string naglowek="")

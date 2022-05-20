@@ -31,7 +31,7 @@ namespace Eurojackpot
                         wylosowanaLiczba = (byte)random.Next((int)this.min, (int)this.max);
 
                     }
-                    while (wylosowaneLiczby.Contains(wylosowanaLiczba));
+                    while( wylosowaneLiczby.Contains(wylosowanaLiczba) );
 
                     wylosowaneLiczby.Add(wylosowanaLiczba);
                 }

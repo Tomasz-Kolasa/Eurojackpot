@@ -6,11 +6,43 @@ namespace Eurojackpot
     {
         static void Main(string[] args)
         {
-            // test Maszyna losujaca
-            var ml = new MaszynaLosujaca(1, 50, 5);
-            var liczby = ml.Losuj();
+            int wybor;
+             
+            do
+            {
+                Konsola.Wyczysc();
+                Console.WriteLine("Co chcesz zrobić?:");
+                Console.WriteLine("1. Zagraj w Eurojackpot");
+                Console.WriteLine("2. Wygeneruj n kombinacji Eurojackpot");
+                Console.Write("Wybierz: ");
 
-            Konsola.WyswietLiczby(liczby, "Wylosowane liczby:");
+                var odpowiedz = Console.ReadLine();
+
+                if (Int32.TryParse(odpowiedz, out wybor) && (wybor==1 || wybor==2))
+                {
+                    if (wybor == 1)
+                    {
+                        zagrajEurojackpot();
+                    }
+                    else
+                    {
+                        wygenerujKombinacjeEurojackpot();
+                    }
+                }
+
+            } while(true);
+        }
+
+        static private void zagrajEurojackpot()
+        {
+            var eurojackpot = new GraEurojackpot();
+            eurojackpot.zagraj();
+        }
+
+        static private void wygenerujKombinacjeEurojackpot()
+        {
+            var kombinacje = new KombinacjeEurojackpot();
+            kombinacje.wygeneruj();
         }
     }
 }
