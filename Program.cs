@@ -6,7 +6,7 @@ namespace Eurojackpot
     {
         static void Main(string[] args)
         {
-            int wybor;
+            byte wybor;
              
             do
             {
@@ -18,31 +18,31 @@ namespace Eurojackpot
 
                 var odpowiedz = Console.ReadLine();
 
-                if (Int32.TryParse(odpowiedz, out wybor) && (wybor==1 || wybor==2))
+                if (Byte.TryParse(odpowiedz, out wybor) && (wybor==1 || wybor==2))
                 {
                     if (wybor == 1)
                     {
-                        zagrajEurojackpot();
+                        ZagrajEurojackpot();
                     }
                     else
                     {
-                        wygenerujKombinacjeEurojackpot();
+                        WygenerujKombinacjeEurojackpot();
                     }
                 }
 
             } while(true);
         }
 
-        static private void zagrajEurojackpot()
+        static private void ZagrajEurojackpot()
         {
             var eurojackpot = new GraEurojackpot();
-            eurojackpot.zagraj();
+            eurojackpot.Zagraj();
         }
 
-        static private void wygenerujKombinacjeEurojackpot()
+        static private void WygenerujKombinacjeEurojackpot()
         {
             var kombinacje = new KombinacjeEurojackpot();
-            kombinacje.wygeneruj();
+            kombinacje.Wygeneruj();
         }
     }
 }

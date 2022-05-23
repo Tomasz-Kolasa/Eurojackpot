@@ -15,15 +15,14 @@ namespace Eurojackpot
             Console.WriteLine();
         }
 
-        static public void WyswietLiczby(List<byte> liczby, string naglowek="")
+        static public void WyswietLiczby(List<byte> liczby, int czasMiedzyLiczbami=0)
         {
-            if(naglowek.Length>0)
-            {
-                Console.WriteLine($"{naglowek}\n");
-            }
-
             foreach (byte liczba in liczby)
             {
+                if(czasMiedzyLiczbami>0)
+                {
+                    System.Threading.Thread.Sleep(czasMiedzyLiczbami);
+                }
                 Console.Write($"{liczba}\t");
             }
 
