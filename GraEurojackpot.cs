@@ -54,7 +54,7 @@ namespace Eurojackpot
             byte liczba;
             List<byte> wybraneLiczby = new List<byte>();
 
-            Console.WriteLine($"Wprowadź {ilosc} liczb z zakresu {min}-{max}");
+            Console.WriteLine($"Wprowadź {ilosc} liczb(y) z zakresu {min}-{max}");
 
             for (byte i=0; i<ilosc; i++)
             {

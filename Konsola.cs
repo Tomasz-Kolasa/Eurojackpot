@@ -7,7 +7,7 @@ namespace Eurojackpot
     {
         static public void Wyczysc()
         {
-            var textPowitalny = "*** Eurojackpot ***";
+            var textPowitalny = "********* Eurojackpot *********";
 
             Console.Clear();
             Console.Write(new string(' ', (Console.WindowWidth - textPowitalny.Length) / 2));

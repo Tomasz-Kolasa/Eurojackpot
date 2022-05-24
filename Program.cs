@@ -12,9 +12,9 @@ namespace Eurojackpot
             {
                 Konsola.Wyczysc();
                 Console.WriteLine("Co chcesz zrobić?:");
-                Console.WriteLine("1. Zagraj w Eurojackpot");
-                Console.WriteLine("2. Wygeneruj n kombinacji Eurojackpot");
-                Console.Write("Wybierz: ");
+                Console.WriteLine("\n1. Zagraj w Eurojackpot");
+                Console.WriteLine("2. Wygeneruj n kombinacji Eurojackpot do pliku .xlsx");
+                Console.Write("\nWybierz: ");
 
                 var odpowiedz = Console.ReadLine();
 
