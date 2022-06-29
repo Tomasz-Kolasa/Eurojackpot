@@ -18,7 +18,7 @@ namespace Eurojackpot
 
                 var odpowiedz = Console.ReadLine();
 
-                if (Byte.TryParse(odpowiedz, out wybor) && (wybor==1 || wybor==2))
+                if (byte.TryParse(odpowiedz, out wybor) && (wybor==1 || wybor==2))
                 {
                     if (wybor == 1)
                     {

@@ -4,15 +4,15 @@ using System.Linq;
 
 namespace Eurojackpot
 {
-    class GraEurojackpot
+    public class GraEurojackpot
     {
         public void Zagraj()
         {
             Konsola.Wyczysc();
-            List<Byte> zaklad5liczb = PoprosUzytkownikaOliczby(1, 50, 5);
+            List<byte> zaklad5liczb = PoprosUzytkownikaOliczby(1, 50, 5);
 
             Konsola.Wyczysc();
-            List<Byte> zaklad2liczby = PoprosUzytkownikaOliczby(1, 12, 2);
+            List<byte> zaklad2liczby = PoprosUzytkownikaOliczby(1, 12, 2);
 
             Konsola.Wyczysc();
             Console.WriteLine("Wytypowane liczby:");
@@ -43,7 +43,7 @@ namespace Eurojackpot
             Console.ReadKey();
         }
 
-        private bool SprawdzCzyTeSameLiczby(List<Byte> wytypowaneLiczby, List<Byte> wylosowaneliczby)
+        public bool SprawdzCzyTeSameLiczby(List<byte> wytypowaneLiczby, List<byte> wylosowaneliczby)
         {
             List<byte> listaRoznic = wytypowaneLiczby.Except(wylosowaneliczby).ToList();
             return (listaRoznic.Count > 0) ? false : true;
@@ -63,7 +63,7 @@ namespace Eurojackpot
                     Console.WriteLine($"Wprowadź liczbę {i+1}/{ilosc}: ");
                     var wprowadzonaWartosc = Console.ReadLine();
 
-                    if (Byte.TryParse(wprowadzonaWartosc, out liczba) && (liczba >= min && liczba <= max))
+                    if (byte.TryParse(wprowadzonaWartosc, out liczba) && (liczba >= min && liczba <= max))
                     {
                         if(wybraneLiczby.Contains(liczba))
                         {

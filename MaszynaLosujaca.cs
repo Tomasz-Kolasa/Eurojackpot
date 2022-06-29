@@ -3,12 +3,16 @@ using System.Collections.Generic;
 
 namespace Eurojackpot
 {
-    class MaszynaLosujaca
+    public class MaszynaLosujaca
     {
         private byte min;
         private byte max;
         private byte iloscLosowanych;
 
+        /*
+         * min - included
+         * max - included
+         */
         public MaszynaLosujaca(byte min, byte max, byte iloscLosowanych)
         {
             this.min = min;
@@ -44,11 +48,13 @@ namespace Eurojackpot
             return wylosowaneLiczby;
         }
 
-        private bool CzyPrawidloweKryteriaLosowania()
+        public bool CzyPrawidloweKryteriaLosowania()
         {
             if (this.max < this.min) return false;
-            if (this.iloscLosowanych > (this.max - this.min)) return false;
-            return true;
+
+            if (this.iloscLosowanych > 0 && this.iloscLosowanych <= (this.max - this.min + 1)) return true;
+
+            return false;
         }
     }
 }
